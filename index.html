@@ -1,0 +1,477 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MY PORTFOLIO</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Times New Roman", serif;
+            background: #f5f5f5;
+            color: #222222;
+            margin: 0;
+        }
+
+        header {
+            background: #800000;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            letter-spacing: 2px;
+        }
+
+        /* Profile Picture */
+        header img {
+            width: 220px !important;
+            height: 220px !important;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 15px #d9a0a0;
+            display: block;
+            margin: 0 auto;
+            box-sizing: content-box;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        nav {
+            background: #1a1a1a;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin: 5px;
+            padding: 12px 18px;
+            background: #800000;
+            border: 1px solid #a52a2a;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: white;
+            color: #800000;
+            box-shadow: 0 0 12px #d9a0a0;
+        }
+
+        section {
+            background: white;
+            width: 80%;
+            margin: 25px auto;
+            padding: 25px;
+            border: 2px solid #800000;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px #00000015;
+        }
+
+        h2 {
+            color: #800000;
+            text-align: center;
+            font-size: 28px;
+            border-bottom: 2px solid #800000;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #800000;
+        }
+
+        p {
+            line-height: 1.7;
+        }
+
+        b {
+            color: #800000;
+            background: #f8eeee;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .skill {
+            background: #800000;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 5px;
+            border: 1px solid #a52a2a;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #1a1a1a;
+            box-shadow: 0 0 10px #d9a0a0;
+        }
+
+        .project {
+            background: #f8eeee;
+            border: 1px solid #800000;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            box-shadow: 0 0 12px #d9a0a0;
+        }
+
+        /* Project Pictures */
+        .project img {
+            width: 240px;
+            height: 220px;
+            max-width: 100%;
+            object-fit: cover;
+            border: 2px solid #800000;
+            border-radius: 5px;
+            display: block;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #800000;
+            color: white;
+            font-family: "Times New Roman", serif;
+            font-size: 17px;
+            font-weight: bold;
+            padding: 12px 25px;
+            border: 1px solid #a52a2a;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 0 8px #80000055;
+        }
+
+        button:hover {
+            background: #1a1a1a;
+            box-shadow: 0 0 10px #800000, 0 0 20px #d9a0a0;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-top: 4px solid #800000;
+        }
+
+        /* DARK MODE */
+        body.dark-mode {
+            background: #121212;
+            color: #eeeeee;
+        }
+
+        body.dark-mode section {
+            background: #1e1e1e;
+            color: #eeeeee;
+            border-color: #a52a2a;
+        }
+
+        body.dark-mode nav {
+            background: #080808;
+        }
+
+        body.dark-mode .project {
+            background: #2b2020;
+            border-color: #a52a2a;
+        }
+
+        body.dark-mode p,
+        body.dark-mode li {
+            color: #eeeeee;
+        }
+
+        body.dark-mode b {
+            background: #2b2020;
+            color: #f2bcbc;
+        }
+
+        body.dark-mode h2,
+        body.dark-mode h3 {
+            color: #f2bcbc;
+        }
+
+        body.dark-mode nav a {
+            background: #4a1010;
+        }
+
+        /* CIRCULAR BUTTONS AT THE BOTTOM */
+        .page-button {
+            position: fixed;
+            bottom: 20px;
+            z-index: 1000;
+            width: 65px;
+            height: 65px;
+            padding: 5px;
+            border-radius: 50%;
+            font-size: 11px;
+            line-height: 1.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        /* Light/Dark Mode Button */
+        #darkModeButton {
+            right: 95px;
+        }
+
+        /* Back to Top Button */
+        #backToTop {
+            right: 20px;
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            header img {
+                width: 150px;
+                height: 150px;
+            }
+
+            nav a {
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+
+            section {
+                width: 82%;
+                padding: 18px;
+                box-sizing: border-box;
+            }
+
+            .project img {
+                width: 200px;
+                height: 220px;
+                max-width: 100%;
+                object-fit: cover;
+            }
+
+            /* Circular Buttons on Mobile */
+            .page-button {
+                width: 58px;
+                height: 58px;
+                font-size: 10px;
+                bottom: 15px;
+            }
+
+            #darkModeButton {
+                right: 83px;
+            }
+
+            #backToTop {
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- DARK MODE / LIGHT MODE BUTTON -->
+    <button id="darkModeButton" class="page-button"
+        onclick="toggleDarkMode()">
+        Dark<br>Mode
+    </button>
+
+    <header id="home">
+        <h1>ELIZABETH ECLAR</h1>
+
+        <img src="C:\Users\Regie\OneDrive\Documents\Eclar\Pic\MEE.jpg" alt="Elizabeth Eclar">
+
+        <p>Hello! Welcome to my personal portfolio.</p>
+        <p><b>Growing Through Knowledge, Guided by Faith.</b></p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#goals">Goals</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>ABOUT ME</h2>
+
+        <p>Hello! I am Elizabeth Eclar, 22 years old,
+        living in Quezon City, Philippines.</p>
+
+        <p>I am a friendly, independent, and responsible person who loves doing household chores and taking care of things on my own because I believe that being independent helps me become more mature and capable in life. I enjoy spending time with other people, making new friends, and creating positive relationships with everyone around me. I have lots of hobbies and interests that I enjoy doing during my free time, but my favorite hobby is sleeping because it helps me relax, recharge my energy, and feel refreshed. I am also a person who is always willing to learn new things, explore new experiences, and improve my skills and knowledge. I believe that every challenge is an opportunity to grow, and I am willing to step out of my comfort zone to discover my strengths and learn from my mistakes. I always try my best to become a better version of myself, stay positive, be responsible, and continue learning as I work toward achieving my dreams and becoming a successful person in the future.</p>
+
+        <p><b>Course:</b> Associate in Computer technology</p>
+        <p><b>School:</b> Datamex College of St. Adeline</p>
+
+        <p><b>Hobbies and Interests:</b></p>
+
+        <ul>
+            <li>Doing House Chores</li>
+            <li>Sleeping</li>
+            <li>Learning new things</li>
+        </ul>
+    </section>
+
+    <section id="skills">
+        <h2>MY SKILLS</h2>
+
+        <div class="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">BASIC PHOTO EDITING</div>
+            <div class="skill">TIME MANAGEMENT</div>
+            <div class="skill">UI DESIGN</div>
+            <div class="skill">MULTITASK</div>
+            <div class="skill">CRITICAL THINKING</div>
+            <div class="skill">LEADING</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>MY PROJECTS</h2>
+
+        <div class="project">
+            <h3>PERSONAL PORTFOLIO</h3>
+            <img src="C:\Users\Regie\OneDrive\Documents\Eclar\Pic\Prof.jpg" alt="Login Form project">
+            <p>A personal portfolio website that showcases my skills, projects, achievements, and personal information.</p>
+            <p><b>Technology:</b> HTML & CSS</p>
+        </div>
+
+        <div class="project">
+            <h3>REGISTRATION FORM</h3>
+            <img src="C:\Users\Regie\OneDrive\Documents\Eclar\Pic\Registration.jpg" alt="Registration Form project">
+            <p>A registration system that collects and records user information by allowing users to fill out a form with their personal details.</p>
+            <p><b>Technology:</b> HTML & CSS</p>
+        </div>
+
+        <div class="project">
+            <h3>LIBRARY SYSTEM</h3>
+            <img src="C:\Users\Regie\OneDrive\Documents\Eclar\Pic\PYTHON.jpg" alt="Library System project">
+            <p>A simple library management system that helps organize book records, track borrowed and returned books, and manage library information.</p>
+            <p><b>Technology:</b> PYTHON</p>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <h2>MY ACHIEVEMENTS</h2>
+
+        <ul>
+            <li>Continued my studies and worked hard to achieve my academic goals.</li>
+            <li>Learned to balance my studies, personal life, and daily responsibilities.</li>
+            <li>Experienced life in Brazil while studying and working at the same time.</li>
+            <li>Developed independence, discipline, and responsibility through life's challenges.</li>
+            <li>Learned to manage my time and stay focused on my dreams.</li>
+            <li>Strengthened my faith in God and trusted His guidance in every situation.</li>
+            <li>Learned to treat others with kindness, love, and respect.</li>
+            <li>Built meaningful relationships and learned the importance of understanding others.</li>
+            <li>Stayed positive and determined even during difficult times.</li>
+            <li>Continued growing as a student and as a person while working toward a better future.</li>
+        </ul>
+    </section>
+
+    <section id="goals">
+        <h2>Professional Goals</h2>
+
+        <p>
+            I want to improve my programming skills, learn more about
+            technology, finish my studies, and become a successful IT
+            professional. I also want to gain more knowledge and experience,
+            find a good job, and build a stable career that will help me
+            achieve my dreams and support my family.
+        </p>
+
+        <h2>Personal Life Goals</h2>
+
+        <p>
+            In my personal life, I want to become more independent,
+            responsible, and confident in making my own decisions.
+            I want to improve myself, learn new things, explore different
+            hobbies, and maintain a happy and healthy lifestyle. I also
+            want to save money, achieve financial independence, help my
+            family, travel to different places, and enjoy life while
+            continuing to grow as a person. Most importantly, I want to
+            become someone who is strong, kind, hardworking, and capable
+            of achieving my goals through patience and determination.
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2>CONTACT ME</h2>
+
+        <p>Email: eclarliezel071004@gmail.com</p>
+        <p>Number: 09948227463</p>
+
+        <p>Facebook:
+            <a href="https://www.facebook.com/share/19eZdJ8f95/?mibextid=wwXIfr">
+                Elizabeth Eclar
+            </a>
+        </p>
+
+        <button onclick="window.location.href='https://www.facebook.com/share/19eZdJ8f95/?mibextid=wwXIfr'">
+            Contact Me
+        </button>
+    </section>
+
+    <footer>
+        <p>© 2026 Elizabeth Eclar</p>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTop" class="page-button"
+        onclick="window.location.href='#home'">
+        Back<br>to Top
+    </button>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+
+            document.getElementById("darkModeButton").innerHTML =
+                document.body.classList.contains("dark-mode")
+                ? "Light<br>Mode"
+                : "Dark<br>Mode";
+        }
+
+        window.onscroll = function () {
+            document.getElementById("backToTop").style.display =
+                window.scrollY > 200 ? "flex" : "none";
+        };
+    </script>
+
+</body>
+</html>
